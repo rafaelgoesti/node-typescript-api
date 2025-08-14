@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  # Serviço do PostgreSQL para desenvolvimento
+  postgres:
+    image: postgres:15-alpine
+    container_name: api-node-postgres-dev
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_PORT: 5432
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - api-network
+
+volumes:
+  postgres_dev_data:
+
+networks:
+  api-network:
+    driver: bridge

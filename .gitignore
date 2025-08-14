@@ -1,0 +1,51 @@
+# Dependências
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de ambiente - NUNCA commitar
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+docker/.env
+
+# Arquivos de build
+dist/
+build/
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+
+# Coverage directory usado por tools como istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# Arquivos temporários
+*.tmp
+*.temp
