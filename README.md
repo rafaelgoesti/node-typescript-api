@@ -131,7 +131,7 @@ npm run docker:full:down
 | `DB_PORT` | Porta do banco de dados | 5432 |
 | `DB_NAME` | Nome do banco de dados | api_node_db |
 | `DB_USER` | Usuário do banco | postgres |
-| `DB_PASSWORD` | Senha do banco | postgres123 |
+| `DB_PASSWORD` | Senha do banco | `sua_senha_secreta` |
 | `NODE_ENV` | Ambiente da aplicação | development |
 | `PORT` | Porta da aplicação | 3000 |
 
@@ -175,9 +175,19 @@ curl -X POST http://localhost:3000/usuarios/login \
 
 ## 🔐 Segurança
 
-- As senhas são automaticamente hasheadas usando bcryptjs
+⚠️ **IMPORTANTE - Configuração de Senhas:**
+- **NUNCA** use senhas fracas como `123456`, `password` ou `postgres123` em produção
+- **SEMPRE** altere as senhas padrão antes de colocar em produção
+- Use senhas fortes com pelo menos 12 caracteres, incluindo letras, números e símbolos
+- As senhas de usuários são automaticamente hasheadas usando bcryptjs
 - Validações rigorosas de entrada de dados
 - Verificação de email único
+
+### Recomendações de Senha para Banco:
+- Mínimo 12 caracteres
+- Combinação de letras maiúsculas e minúsculas
+- Números e símbolos especiais
+- Exemplo: `MinH@S3nh4S3gur@2024!`
 
 ## 🚀 Desenvolvimento
 
