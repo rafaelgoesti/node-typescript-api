@@ -155,8 +155,8 @@ npm run docker:full:down
 curl -X POST http://localhost:3000/usuarios \
   -H "Content-Type: application/json" \
   -d '{
-    "nome": "João Silva",
-    "email": "joao@email.com",
+    "nome": "Rafael Góes",
+    "email": "rafael.goes@email.com",
     "idade": 25,
     "cpf": "123.456.789-00",
     "senha": "MinhaSenh@123"
@@ -168,7 +168,7 @@ curl -X POST http://localhost:3000/usuarios \
 curl -X POST http://localhost:3000/usuarios/login \
   -H "Content-Type: application/json" \
   -d '{
-    "email": "joao@email.com",
+    "email": "rafael.goes@email.com",
     "senha": "MinhaSenh@123"
   }'
 ```
