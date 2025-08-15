@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  # Serviço do PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: api-node-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: api_node_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_PORT: 5432
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - api-network
+
+  # Serviço da API Node.js
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-node-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: api_node_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres123
+    depends_on:
+      - postgres
+    networks:
+      - api-network
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+volumes:
+  postgres_data:
+
+networks:
+  api-network:
+    driver: bridge

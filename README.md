@@ -12,6 +12,23 @@ Uma API RESTful moderna desenvolvida com Node.js, TypeScript, Express e PostgreS
 - ✅ **Docker** - Containerização completa
 - ✅ **Validações** - Validações rigorosas de dados
 - ✅ **Arquitetura em camadas** - Controller, Service, Repository
+- ✅ **Swagger/OpenAPI** - Documentação interativa da API
+
+## 📚 Documentação da API
+
+A API possui documentação interativa completa usando Swagger/OpenAPI:
+
+- **📖 Interface Swagger UI**: `http://localhost:3000/api-docs`
+- **📄 Especificação JSON**: `http://localhost:3000/api-docs.json`
+- **🏠 Status da API**: `http://localhost:3000/`
+- **❤️ Health Check**: `http://localhost:3000/health`
+
+### Funcionalidades da Documentação:
+- ✅ Interface interativa para testar endpoints
+- ✅ Schemas detalhados de requests/responses
+- ✅ Exemplos práticos com dados reais
+- ✅ Códigos de erro e validações
+- ✅ Exportação da especificação OpenAPI
 
 ## 📋 Pré-requisitos
 
@@ -137,6 +154,17 @@ npm run docker:full:down
 
 ## 📋 Endpoints da API
 
+> **💡 Dica**: Use a [documentação Swagger interativa](http://localhost:3000/api-docs) para explorar e testar todos os endpoints facilmente!
+
+### API Status
+
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| `GET` | `/` | Status geral da API |
+| `GET` | `/health` | Health check da aplicação |
+| `GET` | `/api-docs` | Documentação Swagger UI |
+| `GET` | `/api-docs.json` | Especificação OpenAPI JSON |
+
 ### Usuários
 
 | Método | Endpoint | Descrição |
@@ -149,6 +177,8 @@ npm run docker:full:down
 | `POST` | `/usuarios/login` | Autenticar usuário |
 
 ### Exemplo de Uso
+
+> **📖 Documentação Completa**: Veja todos os exemplos, schemas e códigos de resposta na [documentação Swagger](http://localhost:3000/api-docs)
 
 #### Criar Usuário
 ```bash

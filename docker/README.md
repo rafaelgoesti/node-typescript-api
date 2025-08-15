@@ -12,6 +12,7 @@ Esta pasta contém todos os arquivos relacionados ao Docker para o projeto.
 ## Como usar
 
 ### Apenas PostgreSQL (Desenvolvimento)
+
 ```bash
 # A partir da raiz do projeto
 npm run docker:dev
@@ -24,6 +25,7 @@ npm run docker:dev:down
 ```
 
 ### Aplicação Completa
+
 ```bash
 # A partir da raiz do projeto
 npm run docker:full
@@ -36,6 +38,7 @@ npm run docker:full:down
 ```
 
 ### Comandos diretos (a partir da raiz do projeto)
+
 ```bash
 # Apenas PostgreSQL
 docker-compose -f docker/docker-compose.dev.yml up -d
@@ -54,5 +57,6 @@ docker-compose -f docker/docker-compose.yml up -d
 As variáveis de ambiente são configuradas no arquivo `.env` na raiz do projeto.
 
 Para usar com Docker, configure:
+
 - `DB_HOST=localhost`
 - `DB_PORT=5433`
